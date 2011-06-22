@@ -597,6 +597,8 @@ function handleDomLoaded() {
   makeBuildLists();
 
   document.body.classList.add('loaded');
+
+  triggerEnterEvent(curSlide);
 };
 
 function initialize() {
