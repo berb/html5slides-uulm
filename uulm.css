@@ -1,0 +1,115 @@
+/*
+body{
+	counter-reset: slides;
+}
+
+* > article{
+	counter-increment: slides;
+}
+
+article:not(.fill):not(.title-slide):before{
+	
+	content:"Slide " counter(slides);
+	display:block;
+	border-top:2px solid #A32638;
+	position: absolute;
+	width: 900px;
+	height: 28px;
+	min-height: 28px;
+	color: #eee;
+	left: 0;
+	top: 24px;
+	font-size:16px;
+
+	background: #FFFFFF left top repeat-x, left top, #A32638 left top no-repeat;
+}
+*/
+
+article:not(.fill):not(.title-slide):before{
+	content:"";
+	display:block;
+	border-top:2px solid #A32638;
+	border-left:32px solid #A32638;
+	position: absolute;
+	width: 900px;
+	height: 28px;
+	min-height: 28px;
+	color: #eee;
+	left: 0;
+	top: 24px;
+	font-size:16px;
+}
+
+
+.slides.template-uulm-in > article.title-slide img {
+  position: absolute;
+  left: 0;
+  top: 150px;
+  min-width: 900px;
+  min-height: 350px;
+  height:350px;
+
+
+  z-index: -1;
+}
+
+.slides.template-uulm-in > article h1, .slides.template-uulm-in > article h2, .slides.template-uulm-in > article h3{
+	color: #A32638;
+}
+.slides.template-uulm-in > article.title-slide #title{
+	font-size: 48px;
+	  position: absolute;
+	  left: 450px;
+	  top: 525px;
+	text-align:left;
+	margin:0;
+	padding:0;
+}
+
+
+.slides.template-uulm-in > article.title-slide #subtitle{
+	font-size: 32px;
+	  position: absolute;
+	  left: 450px;
+	  bottom: 24px;
+	text-align:left;
+	margin:0;
+	padding:0;
+}
+
+.slides.template-uulm-in > article.title-slide #author{
+	font-size: 32px;
+	  position: absolute;
+	  left: 50px;
+	  bottom: 24px;
+	text-align:left;
+	margin:0;
+	padding:0;
+}
+
+.slides.template-uulm-in > article.title-slide #uulm-logo {
+	  position: absolute;
+	  left: 450px;
+	  top: 24px;
+	  z-index: -2;
+	  width: 350px;
+min-width: 350px;
+	min-height: 70px;
+	  height: 70px;	  
+}
+
+.slides.template-uulm-in > article:not(.fill){
+	padding-top: 100px;
+	padding-left: 80px;
+	padding-right: 80px;
+	padding-bottom: 32px;
+}
+
+.slides.template-uulm-in > article:not(.nobackground):not(.biglogo) {
+  background-color: white;  
+}
+
+li::before {
+	color: #A32638;
+}
+

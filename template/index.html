@@ -10,15 +10,27 @@
            Charles Chen (ChromeVox support)
 
   URL: http://code.google.com/p/html5slides/
+ 
+-->
+
+<!--
+  UUlm Style 
+
+  Author: Benjamin Erb
+
+  URL: https://github.com/berb/html5slides-uulm
+
 -->
 
 <html>
   <head>
-    <title>Presentation</title>
+    <title>Hello World</title>
 
     <meta charset='utf-8'>
-    <script
+ <script
       src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+
+	<link href="../uulm.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
   
   <style>
@@ -30,39 +42,30 @@
 
   <body style='display: none'>
 
-    <section class='slides layout-regular template-default'>
+    <section class='slides layout-normal template-uulm-in'>
       
       <!-- Your slides (<article>s) go here. Delete or comment out the
            slides below. -->
         
-        
-      
-      <article class='biglogo'>
+
+    <article class='title-slide'>
+        <h1 id="title">
+          This is a title
+        </h1>
+        <h2 id="author">
+	Author<br>
+	Date and location
+        </h2>
+        <h2 id="subtitle">
+          subtitle can have <br>
+	  an additional line
+        </h2>
+        <p>
+          <img id="title-header" src='images/example-cat.jpg'>
+          <img id="uulm-logo" src='../images/uulm_logo.svg'>
+        </p>
       </article>
 
-      <article>
-        <h1>
-          Title Goes Here Up
-          <br>
-          To Two Lines
-        </h1>
-        <p>
-          Sergey Brin
-          <br>
-          May 10, 2011
-        </p>
-      </article>
-      
-      <article>
-        <p>
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-        </p>
-        <p>
-          There is more text just underneath.
-        </p>
-      </article>
 
       <article>
         <h3>
