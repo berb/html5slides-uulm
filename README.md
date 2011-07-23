@@ -2,6 +2,19 @@
 
 An HTML5-based slide deck, styled in Ulm University corporate design. The slides are based on the html5slides Google I/O 2011 template (http://code.google.com/p/html5slides/).
 
+## Examples / HowTo
+
+Please refer to `templates/index.html` as guideline.
+
+## Feature Improvements  (compared to original html5slides)
+
+slides.js
+
+- go to n-th slide via `g` key
+- jump to first slide via `home` / `pos1` key
+- jump to last slide via `end` key
+- automatic slide enumeration (injects ?`<span class="slide-nr">nr</span>` onto each slide)
+
 ## License (html5slides)
 
 	Copyright 2011 Luke Mahé, Marcin Wichary. 
