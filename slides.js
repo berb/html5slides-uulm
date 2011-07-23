@@ -18,6 +18,7 @@ var PM_TOUCH_SENSITIVITY = 15;
 
 var curSlide;
 
+
 /* ---------------------------------------------------------------------- */
 /* classList polyfill by Eli Grey 
  * (http://purl.eligrey.com/github/classList.js/blob/master/classList.js) */
@@ -244,6 +245,23 @@ function nextSlide() {
 
     updateSlides();
   }
+};
+
+function goToSlide(target){
+	if (target >= 0 && target <= slideEls.length) {
+		var steps = target - (curSlide+1);
+		while(steps !== 0){
+			if(steps > 0){
+			    curSlide++;
+				steps--;
+			}
+			else if(steps < 0){
+			    curSlide--;
+				steps++;
+			}
+		}
+		    updateSlides();
+	  }
 };
 
 /* Slide events */
@@ -482,6 +500,8 @@ function updateHash() {
 
 /* Event listeners */
 
+
+
 function handleBodyKeyDown(event) {
   switch (event.keyCode) {
     case 39: // right arrow
@@ -516,6 +536,26 @@ function handleBodyKeyDown(event) {
       }
       event.preventDefault();
       break;
+	
+    case 71: // g
+    case 103: // G
+      var nr = prompt("Go to slide", (curSlide+1));
+	goToSlide(parseInt(nr));
+	event.preventDefault();	
+	//Fix for (at least) FF: set focus on slide again to get next key event
+	window.focus();
+      break;
+	
+    case 36: // home
+	goToSlide(1);
+	event.preventDefault();	  
+      break;
+	
+    case 35: // end
+	goToSlide(slideEls.length);
+	event.preventDefault();	  
+      break;
+	
   }
 };
 
