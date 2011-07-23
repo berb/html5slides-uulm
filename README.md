@@ -13,11 +13,11 @@ slides.js
 - go to n-th slide via `g` key
 - jump to first slide via `home` / `pos1` key
 - jump to last slide via `end` key
-- automatic slide enumeration (injects ?`<span class="slide-nr">nr</span>` onto each slide)
+- automatic slide enumeration (injects `<span class="slide-nr">nr</span>` onto each slide)
 
 ## License (html5slides)
 
-	Copyright 2011 Luke Mahé, Marcin Wichary. 
+	Copyright 2011 Luke Mahé, Marcin Wichary, Benjamin Erb. 
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
