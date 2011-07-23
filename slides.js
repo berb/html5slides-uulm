@@ -10,7 +10,8 @@
   URL: http://code.google.com/p/html5slides/
 */
 
-var PERMANENT_URL_PREFIX = 'http://html5slides.googlecode.com/svn/trunk/';
+//var PERMANENT_URL_PREFIX = 'http://html5slides.googlecode.com/svn/trunk/';
+var PERMANENT_URL_PREFIX = '../';
 
 var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 
@@ -565,6 +566,20 @@ function addEventListeners() {
 
 /* Initialization */
 
+function enumrateSlides() {
+	for (var i = 0, slide; slide = slideEls[i]; i++) {
+		var el = document.createElement('span');
+		el.className = 'slide-nr';
+		el.innerHTML = ""+(i+1);
+		if(slide.hasChildNodes()){
+			slide.insertBefore(el, slide.firstChild);  
+		}
+		else{
+			slide.append(el);  
+		}
+  	}	
+};
+
 function addPrettify() {
   var els = document.querySelectorAll('pre');
   for (var i = 0, el; el = els[i]; i++) {
@@ -597,6 +612,7 @@ function addGeneralStyle() {
   el.rel = 'stylesheet';
   el.type = 'text/css';
   el.href = PERMANENT_URL_PREFIX + 'styles.css';
+  el.href = PERMANENT_URL_PREFIX + 'styles.css';
   document.body.appendChild(el);
   
   var el = document.createElement('meta');
@@ -625,6 +641,8 @@ function handleDomLoaded() {
   slideEls = document.querySelectorAll('section.slides > article');
 
   setupFrames();
+
+  enumrateSlides();
 
   addFontStyle();
   addGeneralStyle();
