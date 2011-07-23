@@ -140,4 +140,26 @@ li::before {
 	color: #A32638;
 }
 
+.uulm-color {
+  color: rgb(125,154,170);
+}
 
+.mawi-color {
+  color: rgb(86,170,28);
+}
+
+.in-color {
+  color: rgb(163,38,56);
+}
+
+.nawi-color {
+  color: rgb(189,96,5);
+}
+
+.med-color {
+  color: rgb(38,84,124);
+}
+
+.accent-color {
+  color: rgb(169,162,141);
+}
