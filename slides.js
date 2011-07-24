@@ -20,6 +20,9 @@ var PM_TOUCH_SENSITIVITY = 15;
 var curSlide;
 
 var showPresenterNotes = false;
+var isPresenterSlave = false;
+var presenterSlaveWindow = null;
+var doTransitions = true;
 
 
 /* ---------------------------------------------------------------------- */
@@ -212,6 +215,10 @@ function updateSlides() {
   }  
 
   updateHash();
+
+	if(presenterSlaveWindow !== null){
+		presenterSlaveWindow.postMessage(""+curSlide, "*");
+	}
 };
 
 function buildNextItem() {
@@ -265,6 +272,32 @@ function goToSlide(target){
 		}
 		    updateSlides();
 	  }
+};
+
+function togglePresenterNotes(){
+	if(showPresenterNotes === false){
+		var section = document.querySelector("section.slides");
+		section.classList.add('presenter');
+	}
+	else{
+		var section = document.querySelector("section.slides");
+		section.classList.remove('presenter');
+	}
+	showPresenterNotes = !showPresenterNotes;
+
+};
+
+function toggleTransitions(){
+	if(doTransitions === false){
+		var section = document.querySelector("section.slides");
+		section.classList.remove('no-trans');
+	}
+	else{
+		var section = document.querySelector("section.slides");
+		section.classList.add('no-trans');
+	}
+	doTransitions = !doTransitions;
+
 };
 
 /* Slide events */
@@ -558,18 +591,58 @@ function handleBodyKeyDown(event) {
 	goToSlide(slideEls.length);
 	event.preventDefault();	  
       break;
+	
+	//TODO . => pres. forward
+	case 190:
+		if(presenterSlaveWindow !== null){
+			presenterSlaveWindow.postMessage("forward","*");
+		}
+		event.preventDefault();	  
+		break;
+
+	case 188:
+		if(presenterSlaveWindow !== null){
+			presenterSlaveWindow.postMessage("back","*");
+		}
+		event.preventDefault();	  
+		break;
+
+	case 80: 	
+	case 112:
+		if(!isPresenterSlave && presenterSlaveWindow === null){
+			presenterSlaveWindow = window.open(window.location.href, "Presenter Notes", "dependent=yes,width=900,height=700");
+			//Wait some time and hope that the window has been opened
+			setTimeout(function(){
+				if(presenterSlaveWindow !== null){
+					//you are a slave now!
+					presenterSlaveWindow.postMessage("slave","*");
+					//goto master's current slide
+					presenterSlaveWindow.postMessage(""+curSlide,"*");
+				}
+			},2000);
+			//if master has notes enabled, toggle now
+			if(showPresenterNotes){
+				togglePresenterNotes();
+			}
+			
+		}
+		event.preventDefault();
+		break;	
 
 	case 78: 	
 	case 110:
-		if(showPresenterNotes === false){
-			var section = document.querySelector("section.slides");
-			section.classList.add('presenter');
+		if(presenterSlaveWindow !== null){
+			presenterSlaveWindow.postMessage("togglenotes","*");
 		}
 		else{
-			var section = document.querySelector("section.slides");
-			section.classList.remove('presenter');
+			togglePresenterNotes();
 		}
-		showPresenterNotes = !showPresenterNotes;
+		event.preventDefault();	  
+		break;
+	
+	case 84: 	
+		toggleTransitions();
+		event.preventDefault();	  
 		break;
 	
   }
@@ -578,6 +651,46 @@ function handleBodyKeyDown(event) {
 function addEventListeners() {
   document.addEventListener('keydown', handleBodyKeyDown, false);  
 };
+
+
+var handleTheMessage = function(event){
+/*
+	alert(event.data);
+	console.dir(event);
+*/
+	if(event.data !== null){
+		if(event.data === 'slave'){
+	
+			document.title =  "Presenter Notes: " + document.title;
+				
+			togglePresenterNotes();
+
+			//disable transitions
+			var section = document.querySelector("section.slides");
+			section.classList.add('no-trans');
+
+			isPresenterSlave = true;
+		}
+		else if(event.data === 'togglenotes'){
+			togglePresenterNotes();
+		}
+		else if(event.data === 'forward'){
+			//off-by-one => +2 instead of +1
+			var target = curSlide+2;
+			goToSlide(target);
+		}
+		else if(event.data === 'back'){
+			//off-by-one, not less than 1;
+			goToSlide(curSlide || 1);
+		}
+		else{
+			//optimistic: if none of above, expect number
+			goToSlide(parseInt(event.data)+1);
+		}
+	}
+}
+
+window.addEventListener("message", handleTheMessage, false);
 
 /* Initialization */
 
