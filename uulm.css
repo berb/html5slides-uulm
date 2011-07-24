@@ -1,35 +1,7 @@
-/*
-
-body{
-	counter-reset: slides;
-}
-
-* > article{
-	counter-increment: slides;
-}
-
-article:not(.fill):not(.title-slide):before{
-	
-	content:"Slide " counter(slides);
-	display:block;
-	border-top:2px solid #A32638;
-	position: absolute;
-	width: 900px;
-	height: 28px;
-	min-height: 28px;
-	color: #eee;
-	left: 0;
-	top: 24px;
-	font-size:16px;
-
-	background: #FFFFFF left top repeat-x, left top, #A32638 left top no-repeat;
-}
-*/
-
-article:not(.fill):not(.title-slide):before{
+.slides.template-uulm-in > article:not(.fill):not(.title-slide):before{
 	content:"";
 	display:block;
-	border-top:2px solid #A32638;
+	border-top:2px solid rgb(163,38,56);
 	position: absolute;
 	width: 100%;
 	height: 2px;
@@ -38,9 +10,7 @@ article:not(.fill):not(.title-slide):before{
 	top: 24px;
 }
 
-.slide-nr {
-	display:none;
-}
+
 
 .slides.template-uulm-in > article:not(.fill):not(.title-slide) .slide-nr{
 	display:inline;
@@ -57,7 +27,7 @@ article:not(.fill):not(.title-slide):before{
 	padding-left:6px;
 	padding-right:6px;
 	margin:0;
-	background: #A32638;
+	background: rgb(163,38,56);
 	text-align:center;
 }
 
@@ -67,16 +37,19 @@ article:not(.fill):not(.title-slide):before{
   position: absolute;
   left: 0;
   top: 20%;
+
   min-width: 100%;
   min-height: 50%;
+  width:100%;
   height:50%;
+
 
 
   z-index: -1;
 }
 
 .slides.template-uulm-in > article h1, .slides.template-uulm-in > article h2, .slides.template-uulm-in > article h3{
-	color: #A32638;
+	color: rgb(163,38,56);
 }
 .slides.template-uulm-in > article.title-slide #title{
 	font-size: 48px;
@@ -136,9 +109,50 @@ article:not(.fill):not(.title-slide):before{
   background-color: white;  
 }
 
-li::before {
-	color: #A32638;
+.slides.template-uulm-in li::before {
+	color: rgb(163,38,56);
 }
+
+.slides.template-uulm-in td{
+  background: rgba(169,162,141,0.4);
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+.slides.template-uulm-in th{
+  background: rgba(169,162,141,0.8);
+  padding: 5px 10px;
+  vertical-align: top;
+  color:#eee;
+}
+
+.slides.template-uulm-in iframe {
+  height: 580px;
+}
+
+.slides.template-uulm-in h3 + iframe {
+  margin-top: 40px;
+  height: 480px;
+}
+
+.slides.template-uulm-in article.fill iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  margin: 0;
+
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  z-index: -1;
+}
+
 
 .uulm-color {
   color: rgb(125,154,170);
@@ -162,4 +176,8 @@ li::before {
 
 .accent-color {
   color: rgb(169,162,141);
+}
+
+.slides.template-uulm-in a{
+	color: rgb(125,154,170);
 }
