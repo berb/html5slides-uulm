@@ -641,6 +641,7 @@ function handleBodyKeyDown(event) {
 		break;
 	
 	case 84: 	
+	case 110:
 		toggleTransitions();
 		event.preventDefault();	  
 		break;
