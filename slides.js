@@ -19,6 +19,8 @@ var PM_TOUCH_SENSITIVITY = 15;
 
 var curSlide;
 
+var showPresenterNotes = false;
+
 
 /* ---------------------------------------------------------------------- */
 /* classList polyfill by Eli Grey 
@@ -556,6 +558,19 @@ function handleBodyKeyDown(event) {
 	goToSlide(slideEls.length);
 	event.preventDefault();	  
       break;
+
+	case 78: 	
+	case 110:
+		if(showPresenterNotes === false){
+			var section = document.querySelector("section.slides");
+			section.classList.add('presenter');
+		}
+		else{
+			var section = document.querySelector("section.slides");
+			section.classList.remove('presenter');
+		}
+		showPresenterNotes = !showPresenterNotes;
+		break;
 	
   }
 };

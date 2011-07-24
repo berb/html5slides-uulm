@@ -615,3 +615,44 @@ article.smaller q::after {
 .slide-nr {
 	display:none;
 }
+
+aside{
+	display:none;
+}
+
+.presenter  aside{
+	z-index:10;
+	position: absolute;
+	top:2%;
+	left:35%;
+	display:block;	
+	width:60%;
+	height:96%;
+
+
+	padding:5%;
+	  background: rgba(240, 240, 240, .90);
+
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+  border: 1px solid rgba(0, 0, 0, .3);	
+}
+
+.presenter .build > * {
+  transition: opacity 0.5s ease-in-out 0.2s;
+  -o-transition: opacity 0.5s ease-in-out 0.2s;
+  -moz-transition: opacity 0.5s ease-in-out 0.2s;
+  -webkit-transition: opacity 0.5s ease-in-out 0.2s;
+}
+
+.presenter .to-build {
+  opacity: 100;
+}
