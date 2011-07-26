@@ -14,6 +14,9 @@ slides.js
 - jump to first slide via `home` / `pos1` key
 - jump to last slide via `end` key
 - automatic slide enumeration (injects `<span class="slide-nr">nr</span>` onto each slide)
+- substructuring and toc mechanism (use `<section
+  class="structure">...</section>` blocks to partition your
+  presentation)
 
 ## License (html5slides)
 
