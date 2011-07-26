@@ -570,7 +570,7 @@ function enumrateSlides() {
 	for (var i = 0, slide; slide = slideEls[i]; i++) {
 		var el = document.createElement('span');
 		el.className = 'slide-nr';
-		el.innerHTML = ""+(i+1);
+		el.innerHTML = "Seite "+(i+1)+" / "+slideEls.length;
 		if(slide.hasChildNodes()){
 			slide.insertBefore(el, slide.firstChild);  
 		}
@@ -579,6 +579,14 @@ function enumrateSlides() {
 		}
   	}	
 };
+
+function buildToc() {
+  for(var i = 0, section; section = sectionEls[i]; i++){
+    var el = document.createElement('li');
+    el.innerHTML = ""+ (i+1) + ". " + section.id;
+    document.querySelector('ul.theToc').appendChild(el);
+  }
+}
 
 function addPrettify() {
   var els = document.querySelectorAll('pre');
@@ -640,9 +648,13 @@ function makeBuildLists() {
 function handleDomLoaded() {
   slideEls = document.querySelectorAll('section.slides > article');
 
+  sectionEls = document.querySelectorAll('section.structure');
+
   setupFrames();
 
   enumrateSlides();
+
+  buildToc();
 
   addFontStyle();
   addGeneralStyle();
