@@ -580,13 +580,32 @@ function enumrateSlides() {
   	}	
 };
 
+function addSectionTitle(){
+  for (var i = 0, section; section = sectionEls[i]; i++) {
+    if(section.hasChildNodes()){
+      var articles = section.getElementsByTagName('article');
+      for( var j = 0, slide; slide = articles[j]; j++){
+	var el = document.createElement('span');
+	el.className = 'section-title';
+	el.innerHTML = section.id;
+	if(slide.hasChildNodes()){
+	  slide.insertBefore(el, slide.firstChild);  
+	}
+	else{
+	  slide.append(el);  
+	}
+      }
+    }
+  }	
+};
+
 function buildToc() {
   for(var i = 0, section; section = sectionEls[i]; i++){
     var el = document.createElement('li');
     el.innerHTML = ""+ (i+1) + ". " + section.id;
     document.querySelector('ul.theToc').appendChild(el);
   }
-}
+};
 
 function processXmlCodeSnippets(){
   preEls = document.querySelectorAll('pre.xml');
@@ -596,7 +615,7 @@ function processXmlCodeSnippets(){
     content = content.replace(/>/g, "&gt;");
     pre.innerHTML = content;
   }
-}
+};
 
 function addPrettify() {
   var els = document.querySelectorAll('pre');
@@ -663,6 +682,8 @@ function handleDomLoaded() {
   setupFrames();
 
   enumrateSlides();
+
+  addSectionTitle(); 
 
   buildToc();
 
