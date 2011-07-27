@@ -588,6 +588,16 @@ function buildToc() {
   }
 }
 
+function processXmlCodeSnippets(){
+  preEls = document.querySelectorAll('pre.xml');
+  for(var i = 0, pre; pre = preEls[i]; i++){
+    var content = pre.innerHTML;
+    content = content.replace(/</g, "&lt;");
+    content = content.replace(/>/g, "&gt;");
+    pre.innerHTML = content;
+  }
+}
+
 function addPrettify() {
   var els = document.querySelectorAll('pre');
   for (var i = 0, el; el = els[i]; i++) {
@@ -655,6 +665,8 @@ function handleDomLoaded() {
   enumrateSlides();
 
   buildToc();
+
+  processXmlCodeSnippets();
 
   addFontStyle();
   addGeneralStyle();
