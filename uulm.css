@@ -18,8 +18,8 @@
 	color: #eee;
 	font-size:18px;
 	line-height: 26px;
-	  font-weight: 600;
-  letter-spacing: -1px;
+        font-weight: 600;
+        letter-spacing: -1px;
 	min-width: 26px;
 	left: 0;
 	top: 24px;
@@ -31,7 +31,22 @@
 	text-align:center;
 }
 
-
+.slides.template-uulm-in > article:not(.fill):not(.title-slide) .section-title{
+	color: rgb(163,38,56);
+	display:inline;
+	position: absolute;
+	font-size:18px;
+	line-height: 26px;
+        font-weight: 600;
+        letter-spacing: -1px;
+	min-width: 26px;
+	top: 24px;
+	padding:0px;
+	padding-left:0.5em;
+	padding-right:6px;
+	margin-left:0.5em;
+	text-align:center;
+}
 
 .slides.template-uulm-in > article.title-slide img {
   position: absolute;
@@ -51,6 +66,17 @@
 .slides.template-uulm-in > article h1, .slides.template-uulm-in > article h2, .slides.template-uulm-in > article h3{
 	color: rgb(163,38,56);
 }
+
+.slides.template-uulm-in > article h4 {
+    margin-top:0.8em;
+    margin-bottom:0.3em;
+}
+
+.slides.template-uulm-in > article h5 {
+    margin-top:0.3em;
+    margin-bottom:0.2em;
+}
+
 .slides.template-uulm-in > article.title-slide #title{
 	font-size: 48px;
 	  position: absolute;
