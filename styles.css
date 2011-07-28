@@ -48,7 +48,7 @@ body {
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-.slides > article {
+.slides article {
   display: block;
 
   position: absolute;
@@ -96,13 +96,13 @@ body {
   padding: 40px 160px;
 }
 
-.slides.template-default > article:not(.nobackground):not(.biglogo) {
+.slides.template-default  article:not(.nobackground):not(.biglogo) {
   background: url(images/google-logo-small.png) 710px 625px no-repeat;  
   
   background-color: white;  
 } 
 
-.slides.template-io2011 > article:not(.nobackground):not(.biglogo) {
+.slides.template-io2011  article:not(.nobackground):not(.biglogo) {
   background: url(images/colorbar.png) 0 600px repeat-x,
               url(images/googleio-logo.png) 640px 625px no-repeat;
 
@@ -110,8 +110,8 @@ body {
 
   background-color: white;  
 }
-.slides.layout-widescreen > article:not(.nobackground):not(.biglogo),
-.slides.layout-faux-widescreen > article:not(.nobackground):not(.biglogo) {
+.slides.layout-widescreen  article:not(.nobackground):not(.biglogo),
+.slides.layout-faux-widescreen  article:not(.nobackground):not(.biglogo) {
   background-position-x: 0, 840px;
 }
 
@@ -166,38 +166,38 @@ body {
 
 /* Slides */
 
-.slides > article {
+.slides  article {
   display: none;
 }
-.slides > article.far-past {
+.slides  article.far-past {
   display: block;
   transform: translate(-2040px);
   -o-transform: translate(-2040px);
   -moz-transform: translate(-2040px);
   -webkit-transform: translate3d(-2040px, 0, 0);
 }
-.slides > article.past {
+.slides  article.past {
   display: block;
   transform: translate(-1020px);
   -o-transform: translate(-1020px);
   -moz-transform: translate(-1020px);
   -webkit-transform: translate3d(-1020px, 0, 0);
 }
-.slides > article.current {
+.slides  article.current {
   display: block;
   transform: translate(0);
   -o-transform: translate(0);
   -moz-transform: translate(0);
   -webkit-transform: translate3d(0, 0, 0);
 }
-.slides > article.next {
+.slides  article.next {
   display: block;
   transform: translate(1020px);
   -o-transform: translate(1020px);
   -moz-transform: translate(1020px);
   -webkit-transform: translate3d(1020px, 0, 0);
 }
-.slides > article.far-next {
+.slides  article.far-next {
   display: block;
   transform: translate(2040px);
   -o-transform: translate(2040px);
@@ -248,7 +248,7 @@ body {
 
 /* Styles for slides */
 
-.slides > article {
+.slides  article {
   font-family: 'Open Sans', Arial, sans-serif;
 
   color: rgb(102, 102, 102);

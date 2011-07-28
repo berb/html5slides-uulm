@@ -5,6 +5,7 @@ An HTML5-based slide deck, styled in Ulm University corporate design. The slides
 ## Examples / HowTo
 
 Please refer to `templates/index.html` as guideline.
+Sectioning is demonstrated in `minimal/index.html`.
 
 ## Feature Improvements  (compared to original html5slides)
 
@@ -20,7 +21,8 @@ slides.js
 
 ## License (html5slides)
 
-	Copyright 2011 Luke Mahé, Marcin Wichary, Benjamin Erb. 
+	Copyright 2011 Luke Mahé, Marcin Wichary, Benjamin Erb, Sven
+	Schober.
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.

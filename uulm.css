@@ -1,4 +1,4 @@
-.slides.template-uulm-in > article:not(.fill):not(.title-slide):before{
+.slides.template-uulm-in  article:not(.fill):not(.title-slide):before{
 	content:"";
 	display:block;
 	border-top:2px solid rgb(163,38,56);
@@ -12,7 +12,7 @@
 
 
 
-.slides.template-uulm-in > article:not(.fill):not(.title-slide) .slide-nr{
+.slides.template-uulm-in  article:not(.fill):not(.title-slide) .slide-nr{
 	display:inline;
 	position: absolute;
 	color: #eee;
@@ -31,7 +31,7 @@
 	text-align:center;
 }
 
-.slides.template-uulm-in > article:not(.fill):not(.title-slide) .section-title{
+.slides.template-uulm-in  article:not(.fill):not(.title-slide) .section-title{
 	color: rgb(163,38,56);
 	display:inline;
 	position: absolute;
@@ -49,7 +49,7 @@
 	text-align:center;
 }
 
-.slides.template-uulm-in > article.title-slide img {
+.slides.template-uulm-in  article.title-slide img {
   position: absolute;
   left: 0;
   top: 20%;
@@ -64,21 +64,21 @@
   z-index: -1;
 }
 
-.slides.template-uulm-in > article h1, .slides.template-uulm-in > article h2, .slides.template-uulm-in > article h3{
+.slides.template-uulm-in  article h1, .slides.template-uulm-in > article h2, .slides.template-uulm-in > article h3{
 	color: rgb(163,38,56);
 }
 
-.slides.template-uulm-in > article h4 {
+.slides.template-uulm-in  article h4 {
     margin-top:0.8em;
     margin-bottom:0em;
 }
 
-.slides.template-uulm-in > article h5 {
+.slides.template-uulm-in  article h5 {
     margin-top:0.3em;
     margin-bottom:0.2em;
 }
 
-.slides.template-uulm-in > article.title-slide #title{
+.slides.template-uulm-in  article.title-slide #title{
 	font-size: 48px;
 	  position: absolute;
 	  left: 50%;
@@ -89,7 +89,7 @@
 }
 
 
-.slides.template-uulm-in > article.title-slide #subtitle{
+.slides.template-uulm-in  article.title-slide #subtitle{
 	font-size: 28px;
 	  position: absolute;
 	  left: 50%;
@@ -99,7 +99,7 @@
 	padding:0;
 }
 
-.slides.template-uulm-in > article.title-slide #author{
+.slides.template-uulm-in  article.title-slide #author{
 	font-size: 28px;
 	  position: absolute;
 	  left: 5%;
@@ -109,7 +109,7 @@
 	padding:0;
 }
 
-.slides.template-uulm-in > article.title-slide #uulm-logo {
+.slides.template-uulm-in  article.title-slide #uulm-logo {
 	  position: absolute;
 	  left: 50%;
 	  top: 4%;
@@ -125,14 +125,14 @@
 
 
 
-.slides.template-uulm-in > article:not(.fill){
+.slides.template-uulm-in  article:not(.fill){
 	padding-top: 100px;
 	padding-left: 80px;
 	padding-right: 80px;
 	padding-bottom: 32px;
 }
 
-.slides.template-uulm-in > article:not(.nobackground):not(.biglogo) {
+.slides.template-uulm-in  article:not(.nobackground):not(.biglogo) {
   background-color: white;  
 }
 
@@ -207,4 +207,22 @@
 
 .slides.template-uulm-in a{
 	color: rgb(125,154,170);
+}
+
+.slides .the-toc p:first-child {
+  margin-top:1em;
+}
+.slides .the-toc p {
+  margin-left:1em;
+}
+.slides .progress-toc p:first-child {
+  margin-top:1em;
+}
+.slides .progress-toc p {
+  margin-left:1em;
+  color: gray;
+}
+.slides .progress-toc p.active {
+  margin-left:1em;
+  color: rgb(163,38,56);
 }

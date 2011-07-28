@@ -599,11 +599,51 @@ function addSectionTitle(){
   }	
 };
 
-function buildToc() {
+/**
+ * Builds toc entries and appends them to the passed argument.
+ * It highlights the element with index `number`.
+ */
+function appendTocAndHighlightEntry(element, number){
+  console.log("appendTocAndHighlightEntry("+element +", "+ number +")\n");
+  if(null == element) return;
   for(var i = 0, section; section = sectionEls[i]; i++){
-    var el = document.createElement('li');
+    var el = document.createElement('p');
+    if(i == number){
+      el.setAttribute('class', 'active');
+    }
     el.innerHTML = ""+ (i+1) + ". " + section.id;
-    document.querySelector('ul.theToc').appendChild(el);
+    element.appendChild(el);
+  }
+};
+
+function buildToc() {
+  appendTocAndHighlightEntry(document.querySelector('div.the-toc'), -1);
+};
+
+/**
+ * Returns the index in the `sectionEls` array of the section with `id`,
+ * `-1` if it's not found.
+ */
+function getSectionNumberForId(id){
+  console.log("getSectionNumberForId("+id+")\n");
+  for(var i = 0, section; section = sectionEls[i]; i++){
+    if( id == section.id) return i;
+  }
+  return -1;
+}
+
+/**
+ * Iterates over all divs with class `progress-toc` and inserts an
+ * outline. It highlights the current (parent) section.
+ */
+function buildPorgressiveTocs(){
+  progressEls = document.querySelectorAll('div.progress-toc');
+  for(var i = 0, progToc; progToc = progressEls[i]; i++){
+    // FIXME: this code makes the assumption, that the 
+    // div-Element for the toc is always a grandchild of it's
+    // enclosing section.
+    parentSection =  progToc.parentNode.parentNode;
+    appendTocAndHighlightEntry(progToc, getSectionNumberForId(parentSection.id));
   }
 };
 
@@ -675,8 +715,8 @@ function makeBuildLists() {
 };
 
 function handleDomLoaded() {
-  slideEls = document.querySelectorAll('section.slides > article');
-
+  slideEls = document.querySelectorAll('section.slides article');
+  
   sectionEls = document.querySelectorAll('section.structure');
 
   setupFrames();
@@ -686,6 +726,7 @@ function handleDomLoaded() {
   addSectionTitle(); 
 
   buildToc();
+  buildPorgressiveTocs();
 
   processXmlCodeSnippets();
 
