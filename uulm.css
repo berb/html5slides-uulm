@@ -41,6 +41,7 @@
         letter-spacing: -1px;
 	min-width: 26px;
 	top: 24px;
+	left: 90px;
 	padding:0px;
 	padding-left:0.5em;
 	padding-right:6px;
@@ -69,7 +70,7 @@
 
 .slides.template-uulm-in > article h4 {
     margin-top:0.8em;
-    margin-bottom:0.3em;
+    margin-bottom:0em;
 }
 
 .slides.template-uulm-in > article h5 {

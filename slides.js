@@ -608,7 +608,7 @@ function buildToc() {
 };
 
 function processXmlCodeSnippets(){
-  preEls = document.querySelectorAll('pre.xml');
+  preEls = document.querySelectorAll('.xml');
   for(var i = 0, pre; pre = preEls[i]; i++){
     var content = pre.innerHTML;
     content = content.replace(/</g, "&lt;");
