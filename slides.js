@@ -723,6 +723,15 @@ function addFontStyle() {
 	document.body.appendChild(el);
 };
 
+function setTitle() {
+	//Set the HTML document title using the title from the first slide, if not set. 
+	if(!document.querySelector('head>title') && document.querySelector("h1#title")){
+		var title =  document.createElement('title');
+		title.innerText = document.querySelector("h1#title").innerText;
+		document.querySelector('head').appendChild(title);
+	}	
+}
+
 function addGeneralStyle() {
 
 	var el = document.createElement('meta');
@@ -753,6 +762,8 @@ function handleDomLoaded() {
 	setupFrames();
 
 	enumrateSlides();
+	
+	setTitle();
 
 	addFontStyle();
 	addGeneralStyle();
