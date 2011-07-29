@@ -264,29 +264,31 @@ function goToSlide(target) {
 };
 
 function togglePresenterNotes() {
-	if (showPresenterNotes === false) {
-		var section = document.querySelector("section.slides");
-		section.classList.add('presenter');
-	}
-	else {
-		var section = document.querySelector("section.slides");
-		section.classList.remove('presenter');
+	var slideSections = document.querySelectorAll("section.slides");
+	for ( var i = 0; i < slideSections.length; i++) {
+		var section = slideSections[i];
+		if (showPresenterNotes === false) {
+			section.classList.add('presenter');
+		}
+		else {
+			section.classList.remove('presenter');
+		}		
 	}
 	showPresenterNotes = !showPresenterNotes;
-
 };
 
 function toggleTransitions() {
-	if (doTransitions === false) {
-		var section = document.querySelector("section.slides");
-		section.classList.remove('no-trans');
-	}
-	else {
-		var section = document.querySelector("section.slides");
-		section.classList.add('no-trans');
+	var slideSections = document.querySelectorAll("section.slides");
+	for ( var i = 0; i < slideSections.length; i++) {
+		var section = slideSections[i];
+		if (doTransitions === false) {
+			section.classList.remove('no-trans');
+		}
+		else {
+			section.classList.add('no-trans');
+		}		
 	}
 	doTransitions = !doTransitions;
-
 };
 
 /* Slide events */
@@ -649,8 +651,7 @@ var handleTheMessage = function(event) {
 			document.title = "Presenter Notes: " + document.title;
 			togglePresenterNotes();
 			// disable transitions
-			var section = document.querySelector("section.slides");
-			section.classList.add('no-trans');
+			toggleTransitions();
 		}
 		else if (event.data === 'togglenotes') {
 			//"remote" note toggling 
