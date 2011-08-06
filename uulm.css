@@ -1,4 +1,4 @@
-.slides.template-uulm-in > article:not(.fill):not(.title-slide):before{
+.template-uulm-in .slides > article:not(.fill):not(.title-slide):before{
 	content:"";
 	display:block;
 	border-top:2px solid rgb(163,38,56);
@@ -12,7 +12,7 @@
 
 
 
-.slides.template-uulm-in > article:not(.fill):not(.title-slide) .slide-nr{
+.template-uulm-in .slides > article:not(.fill):not(.title-slide) .slide-nr{
 	display:inline;
 	position: absolute;
 	color: #eee;
@@ -33,7 +33,7 @@
 
 
 
-.slides.template-uulm-in > article.title-slide img {
+.template-uulm-in .slides > article.title-slide img {
   position: absolute;
   left: 0;
   top: 20%;
@@ -48,10 +48,10 @@
   z-index: -1;
 }
 
-.slides.template-uulm-in > article h1, .slides.template-uulm-in > article h2, .slides.template-uulm-in > article h3{
+.template-uulm-in .slides > article h1, .template-uulm-in .slides > article h2, .template-uulm-in .slides > article h3{
 	color: rgb(163,38,56);
 }
-.slides.template-uulm-in > article.title-slide #title{
+.template-uulm-in .slides > article.title-slide #title{
 	font-size: 48px;
 	  position: absolute;
 	  left: 50%;
@@ -62,7 +62,7 @@
 }
 
 
-.slides.template-uulm-in > article.title-slide #subtitle{
+.template-uulm-in .slides > article.title-slide #subtitle{
 	font-size: 28px;
 	  position: absolute;
 	  left: 50%;
@@ -72,7 +72,7 @@
 	padding:0;
 }
 
-.slides.template-uulm-in > article.title-slide #author{
+.template-uulm-in .slides > article.title-slide #author{
 	font-size: 28px;
 	  position: absolute;
 	  left: 5%;
@@ -82,7 +82,7 @@
 	padding:0;
 }
 
-.slides.template-uulm-in > article.title-slide #uulm-logo {
+.template-uulm-in .slides > article.title-slide #uulm-logo {
 	  position: absolute;
 	  left: 50%;
 	  top: 4%;
@@ -98,44 +98,44 @@
 
 
 
-.slides.template-uulm-in > article:not(.fill){
+.template-uulm-in .slides > article:not(.fill){
 	padding-top: 100px;
 	padding-left: 80px;
 	padding-right: 80px;
 	padding-bottom: 32px;
 }
 
-.slides.template-uulm-in > article:not(.nobackground):not(.biglogo) {
+.template-uulm-in .slides > article:not(.nobackground):not(.biglogo) {
   background-color: white;  
 }
 
-.slides.template-uulm-in li::before {
+.template-uulm-in .slides li::before {
 	color: rgb(163,38,56);
 }
 
-.slides.template-uulm-in td{
+.template-uulm-in .slides td{
   background: rgba(169,162,141,0.4);
   padding: 5px 10px;
   vertical-align: top;
 }
 
-.slides.template-uulm-in th{
+.template-uulm-in .slides th{
   background: rgba(169,162,141,0.8);
   padding: 5px 10px;
   vertical-align: top;
   color:#eee;
 }
 
-.slides.template-uulm-in iframe {
+.template-uulm-in .slides iframe {
   height: 580px;
 }
 
-.slides.template-uulm-in h3 + iframe {
+.template-uulm-in .slides h3 + iframe {
   margin-top: 40px;
   height: 480px;
 }
 
-.slides.template-uulm-in article.fill iframe {
+.template-uulm-in .slides > article.fill iframe {
   position: absolute;
   left: 0;
   top: 0;
@@ -178,6 +178,6 @@
   color: rgb(169,162,141);
 }
 
-.slides.template-uulm-in a{
+.template-uulm-in .slides a{
 	color: rgb(125,154,170);
 }

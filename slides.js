@@ -686,16 +686,17 @@ function addEventListeners() {
 
 function enumrateSlides() {
 	for ( var i = 0, slide; slide = slideEls[i]; i++) {
-		var el = document.createElement('span');
-		el.className = 'slide-nr';
-		el.innerHTML = "" + (i + 1);
-		if (slide.hasChildNodes()) {
-			slide.insertBefore(el, slide.firstChild);
-		}
-		else {
-			slide.append(el);
-		}
+		var el = document.createElement('footer');
+		var span = document.createElement('span');
+		span.className = 'slide-nr';
+		span.innerHTML = "" + (i + 1);
+		el.appendChild(span);
+		slide.appendChild(el);		
 	}
+};
+
+function processToc(){
+	
 };
 
 function addPrettify() {
@@ -765,6 +766,8 @@ function handleDomLoaded() {
 	enumrateSlides();
 	
 	setTitle();
+	
+	processToc();
 
 	addFontStyle();
 	addGeneralStyle();
