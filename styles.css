@@ -654,3 +654,21 @@ aside{
   -webkit-transition: -webkit-transform;
 }
 
+
+.blackfade { 
+	display: none; 
+	background: #000;
+	position: fixed; left: 0; top: 0;
+	width: 100%; height: 100%;
+	opacity: .90;
+	z-index: 9999;
+}
+
+.whitefade { 
+	display: none; 
+	background: #FFF;
+	position: fixed; left: 0; top: 0;
+	width: 100%; height: 100%;
+	opacity: .95;
+	z-index: 9999;
+}
