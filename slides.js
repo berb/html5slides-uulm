@@ -373,6 +373,42 @@ function cancelTouch() {
 	document.body.removeEventListener('touchend', handleTouchEnd, true);
 };
 
+/* Fadings */
+
+
+function toggleFade(type){
+
+	var fadeDiv = document.querySelector('#fadeDiv');
+	
+	if(fadeDiv === null){
+		fadeDiv  = document.createElement('div');
+		fadeDiv.id = "fadeDiv";
+		fadeDiv.className = type;
+		document.body.appendChild(fadeDiv);
+	}
+	else if(fadeDiv.className !== type){
+		fadeDiv.className = type;
+	}
+	
+	if(fadeDiv.style.display === "block"){
+		fadeDiv.style.display = "none";
+	}
+	else{
+		fadeDiv.style.display = "block";
+	}
+	
+}
+
+function toggleBlackOut(){
+	toggleFade("blackfade");
+}
+
+
+function toggleWhiteOut(){
+	toggleFade("whitefade");
+}
+
+
 /* Preloading frames */
 
 function disableSlideFrames(no) {
@@ -632,6 +668,13 @@ function handleBodyKeyDown(event) {
 		case 110:
 			toggleTransitions();
 			event.preventDefault();
+			break;
+
+		case 66: // b 
+			toggleBlackOut();
+			break;
+		case 87: // w 
+			toggleWhiteOut();
 			break;
 
 	}
