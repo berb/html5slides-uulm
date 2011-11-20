@@ -36,8 +36,12 @@
 <body style='display: none'>
 
 	<div class='slides layout-normal template-uulm-in'>
-		<!-- Your slides (<article>s) go here. Delete or comment out the
-           slides below. -->
+		<!-- 
+			Your slides (<article>s) go here. You can group them using <section>s
+			Every slide must be part of a section. If a section contains a <header>,
+			its content will be used as TOC label. If you don't want to group your
+			slides, just put all of your <article>s in a single <section>.
+		-->
 
 		<section>
 			<article class='title-slide'>
@@ -54,15 +58,14 @@
 				</p>
 			</article>
 		
-		</section>
-		
-		<section>
-			<header>Introduction</header>
-
 			<article>
 				<h3>Contents</h3>
 				<nav class="toc" />
 			</article>
+		</section>
+		
+		<section>
+			<header>Getting started</header>
 
 			<article>
 				<h3>The nitty-gritty, this is a slide:</h3>
@@ -83,13 +86,6 @@
 </pre>
 				</section>
 				<p>You can see on the next slide what it looks like.</p>
-			</article>
-
-		
-
-			<article>
-				<h3>Slide captions are &lt;h3&gt; headings</h3>
-				<nav class="toc" />
 			</article>
 
 			<article>
@@ -130,12 +126,12 @@
 					default.</p>
 				<section>
 					<pre>
-	     &lt;article&gt;
-		...
-	       &lt;aside&gt;
-		 This is a presenter note!
-	       &lt;/aside&gt;
-	     &lt;/article&gt;
+     &lt;article&gt;
+	...
+       &lt;aside&gt;
+	 This is a presenter note!
+       &lt;/aside&gt;
+     &lt;/article&gt;
 	</pre>
 				</section>
 				<p>
@@ -246,13 +242,43 @@
 			</article>
 
 			<article>
+				<h3>Styles</h3>
+				<ul>
+					<li><span class='uulm-color'>class="uulm-color"</span>
+					<li><span class='in-color'>class="in-color"</span>
+					<li><span class='mawi-color'>class="mawi-color"</span>
+					<li><span class='nawi-color'>class="nawi-color"</span>
+					<li><span class='med-color'>class="med-color"</span>
+					<li><span class='accent-color'>class="accent-color"</span>
+					<li><b>bold</b> and <i>italic</i>
+				</ul>
+			</article>
+			
+			
+			<article>
+				<h3>Table of contents</h3>
+				<p>You can include a TOC by including <br/>
+				<code>&lt;nav class='toc'&gt;</code><br/>
+				to a slide.
+				</p>
+				<p>This will populate a list with all named sections. Sections are associated with a title by adding <code>&lt;header&gt;title&lt;/header&gt;</code> to &lt;section&gt;.</p>
+				<p>When used inside a section, the current section will be highlightend:</p>
+				<nav class="toc"/>
+			</article>
+
+
+			<article>
 				<h2>By the way…</h2>
 			</article>
 
 			<article class='fill'>
 				<q> Power corrupts and PowerPoint corrupts absolutely. </q>
 				<div class='author'>Vint Cerf</div>
-			</article>
+			</article>			
+		</section>
+		
+		<section>
+			<header>Cheat Sheet</header>		
 
 			<article>
 				<h3>Cheat Sheet – Shortcuts</h3>
@@ -359,27 +385,13 @@
 					</tr>
 				</table>
 			</article>
-
-			<article>
-				<h3>Styles</h3>
-				<ul>
-					<li><span class='uulm-color'>class="uulm-color"</span>
-					<li><span class='in-color'>class="in-color"</span>
-					<li><span class='mawi-color'>class="mawi-color"</span>
-					<li><span class='nawi-color'>class="nawi-color"</span>
-					<li><span class='med-color'>class="med-color"</span>
-					<li><span class='accent-color'>class="accent-color"</span>
-					<li><b>bold</b> and <i>italic</i>
-				</ul>
-			</article>
-
 		</section>
 	
 		<section>
 			<header>Embedding Media</header>
 			
 			<article>
-				<h2>Images &amp; videos</h2>
+				<h2>Images, Videos &amp; Websites</h2>
 			</article>			
 
 			<article>

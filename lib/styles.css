@@ -385,7 +385,7 @@ nav.toc ol li.current{
 	font-weight:bold;
 }
 nav.toc ol li.future{
-	opacity: 0.80;
+	opacity: 0.95;
 }
 
 pre {
