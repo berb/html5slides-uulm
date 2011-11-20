@@ -1,4 +1,4 @@
-.slides.template-uulm-in > article:not(.fill):not(.title-slide):before{
+.slides.template-uulm-in section > article:not(.fill):not(.title-slide):before{
 	content:"";
 	display:block;
 	border-top:2px solid rgb(163,38,56);
@@ -12,7 +12,7 @@
 
 
 
-.slides.template-uulm-in > article:not(.fill):not(.title-slide) .slide-nr{
+.slides.template-uulm-in section > article:not(.fill):not(.title-slide) .slide-nr{
 	display:inline;
 	position: absolute;
 	color: #eee;
@@ -33,7 +33,7 @@
 
 
 
-.slides.template-uulm-in > article.title-slide img {
+.slides.template-uulm-in section > article.title-slide img {
   position: absolute;
   left: 0;
   top: 20%;
@@ -48,10 +48,10 @@
   z-index: -1;
 }
 
-.slides.template-uulm-in > article h1, .slides.template-uulm-in > article h2, .slides.template-uulm-in > article h3{
+.slides.template-uulm-in section > article h1, .slides.template-uulm-in section > article h2, .slides.template-uulm-in section > article h3{
 	color: rgb(163,38,56);
 }
-.slides.template-uulm-in > article.title-slide #title{
+.slides.template-uulm-in section > article.title-slide #title{
 	font-size: 48px;
 	  position: absolute;
 	  left: 50%;
@@ -62,7 +62,7 @@
 }
 
 
-.slides.template-uulm-in > article.title-slide #subtitle{
+.slides.template-uulm-in section > article.title-slide #subtitle{
 	font-size: 28px;
 	  position: absolute;
 	  left: 50%;
@@ -72,7 +72,7 @@
 	padding:0;
 }
 
-.slides.template-uulm-in > article.title-slide #author{
+.slides.template-uulm-in section > article.title-slide #author{
 	font-size: 28px;
 	  position: absolute;
 	  left: 5%;
@@ -82,7 +82,7 @@
 	padding:0;
 }
 
-.slides.template-uulm-in > article.title-slide #uulm-logo {
+.slides.template-uulm-in section > article.title-slide #uulm-logo {
 	  position: absolute;
 	  left: 50%;
 	  top: 4%;
@@ -98,14 +98,14 @@
 
 
 
-.slides.template-uulm-in > article:not(.fill){
+.slides.template-uulm-in section > article:not(.fill){
 	padding-top: 100px;
 	padding-left: 80px;
 	padding-right: 80px;
 	padding-bottom: 32px;
 }
 
-.slides.template-uulm-in > article:not(.nobackground):not(.biglogo) {
+.slides.template-uulm-in section > article:not(.nobackground):not(.biglogo) {
   background-color: white;  
 }
 
@@ -135,7 +135,7 @@
   height: 480px;
 }
 
-.slides.template-uulm-in article.fill iframe {
+.slides.template-uulm-in section article.fill iframe {
   position: absolute;
   left: 0;
   top: 0;
@@ -180,4 +180,8 @@
 
 .slides.template-uulm-in a{
 	color: rgb(125,154,170);
+}
+
+a{
+	text-decoration: none;
 }
