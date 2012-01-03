@@ -541,7 +541,7 @@ div.author::before {
 /* Size variants */
 
 article.smaller p,
-article.smaller ul {
+article.smaller ul, article.smaller dl {
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0;
