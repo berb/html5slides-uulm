@@ -450,7 +450,7 @@ article.fill iframe {
   z-index: -1;
 }
 
-article.fill img {
+article.fill img:not(.nofill) {
   position: absolute;
   left: 0;
   top: 0;
